@@ -1,0 +1,26 @@
+<!doctype HTML>
+<html lang="es">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body style="background-color:lightgreen;">
+
+		<video autoplay controls></video>
+		<script>
+			window.URL = window.URL || window.webkitURL;
+
+			
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+			navigator.getUserMedia({audio:true,video:true},function(vid){
+				document.querySelector('video').src = window.URL.createObjectURL(vid);
+			},function(e){
+				console.log(e);
+
+			});
+		</script>
+		
+	</body>
+</html>
